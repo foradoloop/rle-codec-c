@@ -38,8 +38,6 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "%s was compressed to %s.rle\n", file_path, file_path);
 		fclose(input_file);
 		fclose(output_file);
-
-		return 0;
 	} else if (strcmp(mode, "-d") == 0) {
 		if (rle_check_extension(file_path) == 0) {
 			fprintf(stderr, "Received a non rle file, so decompression can not be done\n");
@@ -65,8 +63,6 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "%s was successfully decompressed to its original format\n", file_path);
 		fclose(input_file);
 		fclose(output_file);
-
-		return 0;
 	} else {
 		fprintf(stderr, "Unknown mode: %s\n", mode);
 		print_usage(argv[0]);
